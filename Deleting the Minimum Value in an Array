@@ -1,0 +1,21 @@
+using System.Collections.Generic;
+using System.Linq;
+
+public class Solution 
+{
+    public int[] solution(int[] arr) 
+    {
+        int[] answer = new int[] {};
+        if (arr.Length != 1)
+        {
+            List<int> intList = arr.ToList();
+            intList.Remove(arr.Min());
+            answer = intList.ToArray();
+        }
+        else
+        {
+            answer = new int[] {-1};
+        }
+        return answer;
+    }
+}
