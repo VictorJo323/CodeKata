@@ -1,0 +1,33 @@
+using System;
+public class Solution 
+{
+    public long solution(long n) 
+    {
+        long answer = 0;
+        string temp = n.ToString();
+        char[] cipher = new char[temp.Length];
+        for (int i=0; i<cipher.Length; i++)
+        {
+            cipher[i] = temp[i];
+        }
+        Array.Sort(cipher);
+        Array.Reverse(cipher);
+        answer = long.Parse(string.Join("", cipher));
+        return answer;
+    }
+}
+
+
+using System;
+public class Solution 
+{
+    public long solution(long n) 
+    {
+        long answer = 0;
+        char[] cipher = n.ToString().ToCharArray();
+        Array.Sort(cipher);
+        Array.Reverse(cipher);
+        answer = long.Parse(new string(cipher));
+        return answer;
+    }
+}
