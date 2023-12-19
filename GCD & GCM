@@ -1,0 +1,40 @@
+public class Solution 
+{
+    public int[] solution(int n, int m) 
+    {
+        int[] answer = new int[] {Gcd(n,m), Gcm(n, m)};
+        return answer;
+    }
+    
+    public int Gcd(int n, int m)
+    {
+        int upper;
+        int lower;
+        if(n>m)
+        {
+            upper = n;
+            lower = m;
+        }
+        else
+        {
+            upper = m;
+            lower = n;
+        }
+        
+        if(upper%lower == 0)
+        {
+            return lower;
+        }
+        else
+        {
+            return Gcd(lower, upper%lower);
+        }
+    }
+    
+    public int Gcm (int n, int m)
+    {
+        int gcm;
+        gcm = (n*m) / Gcd(n, m);
+        return gcm;
+    }
+}
