@@ -1,0 +1,23 @@
+using System;
+
+public class Solution 
+{
+    public int solution(int n) 
+    {
+        int answer = 0;
+        string convert = "";
+        while(n>0)
+        {
+            convert = convert + (n%3);
+            n = n/3;
+        }
+        
+        for (int i = 0; i<convert.Length; i++)
+        {
+            char temp = convert[convert.Length - 1 - i];
+            int tempInt = int.Parse(temp.ToString()) * (int)Math.Pow(3, i);
+            answer += tempInt;
+        }
+        return answer;
+    }
+}
