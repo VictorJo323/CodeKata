@@ -1,0 +1,21 @@
+using System;
+
+public class Solution 
+{
+    public int solution(string t, string p) 
+    {
+        int answer = 0;
+        string[] temp = new string[t.Length - p.Length+1];
+        for (int i = 0; i < t.Length - p.Length+1; i++)
+        {
+            temp[i] = t.Substring(i, p.Length);
+            double x = double.Parse(temp[i]);
+            double y = double.Parse(p);
+            if (x <= y)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
