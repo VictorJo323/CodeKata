@@ -1,0 +1,33 @@
+using System;
+
+public class Solution 
+{
+    public int solution(int number, int limit, int power) 
+    {
+        int answer = 0;
+        int[] divisors = new int[number];
+        for (int i = 1; i<=number; i++)
+        {
+            divisors[i-1] = 1;
+            for(int j = 1; j<=i/2; j++)
+            {
+                if(i%j == 0)
+                {
+                    divisors[i-1]++;
+                }
+            }
+        }
+        foreach (int i in divisors)
+        {
+            if (i<=limit)
+            {
+                answer+=i;
+            }
+            else
+            {
+                answer+=power;
+            }
+        }
+        return answer;
+    }
+}
