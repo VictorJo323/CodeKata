@@ -1,0 +1,41 @@
+public class Solution {
+    public string solution(int a, int b) {
+        string answer = "";
+        int K = 16;
+        int J = 20;
+        int M = (a < 3) ? a + 12 : a;
+        int Q = b;
+
+        if(a < 3) {
+            K--;
+        }
+
+        int h = (Q + (int)((13 * (M + 1)) / 5) + K + (int)(K / 4) + (int)(J / 4) - 2 * J) % 7;
+        h = (h + 7) % 7;
+
+        switch(h) {
+            case 0:
+                answer = "SAT";
+                break;
+            case 1:
+                answer = "SUN";
+                break;
+            case 2:
+                answer = "MON";
+                break;
+            case 3:
+                answer = "TUE";
+                break;
+            case 4:
+                answer = "WED";
+                break;
+            case 5:
+                answer = "THU";
+                break;
+            case 6:
+                answer = "FRI";
+                break;
+        }
+        return answer;
+    }
+}
