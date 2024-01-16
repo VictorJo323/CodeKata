@@ -1,0 +1,27 @@
+using System;
+
+public class Solution 
+{
+    public string solution(string s, int n) 
+    {
+        string answer = "";
+        foreach (char letter in s)
+        {
+            answer += ShiftCharacter(letter, n);
+        }
+        return answer;
+    }
+    
+    public char ShiftCharacter(char alphabet, int n)
+    {
+        if(char.IsUpper(alphabet))
+        {
+            return (char)('A' + (alphabet-'A'+ n)%26);
+        }
+        if(char.IsLower(alphabet))
+        {
+            return (char)('a' + (alphabet-'a'+n)%26);
+        }
+        return alphabet;
+    }
+}
