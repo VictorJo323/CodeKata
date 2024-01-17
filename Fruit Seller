@@ -1,0 +1,19 @@
+using System;
+using System.Linq;
+
+public class Solution 
+{
+    public int solution(int k, int m, int[] score) 
+    {
+        int answer = 0;
+        Array.Sort(score);
+        int startIndex = score.Length % m;
+        
+        for (int i = startIndex; i<score.Length; i+=m)
+        {
+            int[] box = score.Skip(i).Take(m).ToArray();
+            answer += box[0] * m;
+        }
+        return answer;
+    }
+}
